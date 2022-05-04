@@ -2,7 +2,39 @@ import express from "express";
 
 const app = express();
 
-// middleware
+const arrayGyms = [
+  {
+    id: 1,
+    name: "Berta Block",
+    location: "Berlin",
+  },
+  {
+    id: 2,
+    name: "BoulderKlub",
+    location: "Berlin",
+  },
+  {
+    id: 3,
+    name: "The Castle",
+    location: "London",
+  },
+];
+
+app.get("/gyms", (req, res) => {
+  return res.send(Object.values(arrayGyms));
+});
+
+app.get("/gyms/:gymId", (req, res) => {
+  return res.send(arrayGyms.find((x) => x.id === +req.params.gymId));
+});
+
+const port = 3000;
+
+app.listen(port, () => {
+  console.log(`Listening on port ${port}`);
+});
+
+/* // middleware
 const hello = (req: express.Request, res: express.Response, next: express.NextFunction) => {
   console.log("hello middleware");
   next();
@@ -17,7 +49,7 @@ app.get("/hello", (req, res) => {
   res.end();
 });
 
-/* app.use("/", hello); */
+app.use("/", hello);
 
 // route /
 app.get("/", (req, res) => {
@@ -47,4 +79,4 @@ app.listen(9000, () => {
   console.log("listening on 9000!!!");
 });
 
-app.listen(8000);
+app.listen(8000); */
