@@ -24,6 +24,7 @@ app.get("/", (req, res) => {
   res.send("hello world");
 });
 
+// route /array
 const cb1 = (req: express.Request, res: express.Response, next: express.NextFunction) => {
   console.log("CB1");
   next();
@@ -39,13 +40,11 @@ const cb3 = (req: express.Request, res: express.Response, next: express.NextFunc
   res.send("hello from C!");
 };
 
-// route /array
 app.get("/array", [cb1, cb2, cb3]);
 
-/* app.post("/", (req, res) => {
-  res.send("POST request to the homepage");
-}); */
-
+// listening
 app.listen(9000, () => {
-  console.log("listening on 9000 :)");
+  console.log("listening on 9000!!!");
 });
+
+app.listen(8000);
