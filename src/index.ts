@@ -6,17 +6,32 @@ const arrayGyms = [
   {
     id: 1,
     name: "Berta Block",
-    location: "Berlin",
+    location: {
+      city: "Berlin",
+      address: "Mühlenstraße 62",
+      postCode: "13187",
+      country: "Germany",
+    },
   },
   {
     id: 2,
     name: "BoulderKlub",
-    location: "Berlin",
+    location: {
+      city: "Berlin",
+      address: "Ohlauer Str. 38",
+      postCode: "10999",
+      country: "Germany",
+    },
   },
   {
     id: 3,
     name: "The Castle",
-    location: "London",
+    location: {
+      city: "London",
+      address: "Green Lanes",
+      postCode: "N4 2HA",
+      country: "United Kingdom",
+    },
   },
 ];
 
